@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMBG gradjana Srbije</title>
+    <script src="startup.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+</head>
+<body>
+    <div id="input">
+        <label for="numberInput">Unesi JMBG (13 cifara):</label>
+        <input type="text" id="numberInput" oninput="restrictInput(event)" pattern="[0-9]*" maxlength="13" />
+        <div id="warning" class="warning" style="display: none;">Unesite samo brojeve</div>
+        <div id="warning13" class="warning" style="display: none;">Unesite svih 13 cifara JMBG-a</div>
+        <button id="submitButton" class="hidden" onclick="handleSubmit()">Generiši</button>
+    </div>
+    <hr style="width: 100%;">
+    <div id="output">
+        <label for="jmbg">JMBG:</label>
+        <input type="text" id="jmbg" readonly />
+
+        <label for="dob">Datum rođenja:</label>
+        <input type="text" id="dob" readonly />
+      
+        <label for="age">Godine:</label>
+        <input type="text" id="age" readonly />
+    
+        <label for="region">Mesto:</label>
+        <div class="flexRow">
+            <textarea rows="3" style="width: 100%; resize: none;" type="text" id="region" readonly></textarea>
+            <div class="info-label">
+                <span>ℹ️</span>
+                <div class="info-label-content">
+                  <p>Za osobe rođene pre 1976., politički region u kome su prvi put registrovani.</p>
+                </div>
+            </div>
+        </div>
+
+        <label for="gender">Pol:</label>
+        <input type="text" id="gender" readonly />
+      
+        <label for="checksum">Kontrolni broj:</label>
+        <input type="text" id="checksum" readonly />
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
