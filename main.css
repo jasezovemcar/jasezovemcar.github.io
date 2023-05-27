@@ -44,6 +44,10 @@ body{
     display: block;
   }
 
+  #output input, textarea{
+    cursor: default !important;
+  }
+
   @media (max-width: 1200px) {
     #input{
       width: 95vw;
